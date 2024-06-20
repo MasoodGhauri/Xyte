@@ -26,8 +26,9 @@ const SidePanel = ({
       sendFile(file);
       setFile(null);
     } else {
-      sendMessage(msg);
+      let temp = msg;
       setMsg("");
+      sendMessage(temp);
     }
   };
 
