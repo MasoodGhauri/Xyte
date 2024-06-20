@@ -35,7 +35,10 @@ const Room = () => {
   const [showSidePanel, setShowSidePanel] = useState(null);
 
   const enter = () => {
-    socketRef.current = io.connect("http://localhost:3001"); // backend url
+    socketRef.current = io.connect(
+      // "https://xytebackend-production.up.railway.app/"
+      `https://xyte-meet.web.app/room/${roomID}`
+    ); // backend url
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
